@@ -1,7 +1,7 @@
-import Home from './inicio/index.page'
+import Home from "./inicio/index.page";
 
 const Main = () => {
-  return <Home />
-}
+  return <Home />;
+};
 
-export default Main
+export default Main;

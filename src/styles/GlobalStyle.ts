@@ -1,12 +1,12 @@
-import styled, { createGlobalStyle } from 'styled-components'
-import { theme } from './theme'
+import styled, { createGlobalStyle } from "styled-components";
+import { theme } from "./theme";
 
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-`
+`;
 
 export default createGlobalStyle`
   html {
@@ -17,8 +17,13 @@ export default createGlobalStyle`
   }
 
   :root {
-    --light: #ffffff;
-    --dark: #000000;
+    --darkBlue: hsl(233, 26%, 24%);
+    --limeGreen: hsl(136, 65%, 51%);
+    --brightCyan: hsl(192, 70%, 51%);
+    --grayishBlue: hsl(233, 8%, 62%);
+    --lightGrayishBlue: hsl(220, 16%, 96%);
+    --veryLightGray: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
   }
 
   * {
@@ -28,10 +33,10 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: 'Work Sans';
-    font-weight: 500;
-    color: ${theme.colors.light};
-    background: white;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 300;
+    color: ${theme.colors.grayishBlue};
+    background: ${theme.colors.veryLightGray};
     overflow-y: overlay;
     overflow-x: hidden;
     overscroll-behavior: contain;
@@ -54,25 +59,51 @@ export default createGlobalStyle`
     }
   }
 
+  h1, h2, h3 {
+    margin: 0;
+    line-height: 1.3;
+    font-weight: 400;
+    color: ${theme.colors.darkBlue};
+  }
+
   h1 {
-    font-size: ${theme.sizes.size_30};
-    font-weight: 600;
-    line-height: 2.75rem;
+    font-size: ${theme.sizes.size_34};
 
     @media all and (min-width: ${theme.breakpoints.xl}) {
-      font-size: ${theme.sizes.size_44};
-      line-height: 3.75rem;
+      font-size: ${theme.sizes.size_50};
     }
   }
 
-  button {
-    font-family: inherit;
+  h2 {
+    font-size: ${theme.sizes.size_30};
+
+    @media all and (min-width: ${theme.breakpoints.xl}) {
+      font-size: ${theme.sizes.size_38};
+    }
+  }
+
+  h3 {
+    font-size: ${theme.sizes.size_20};
+
+    @media all and (min-width: ${theme.breakpoints.xl}) {
+      font-size: ${theme.sizes.size_22};
+    }
+  }
+
+  p {
+    margin: 0;
+
+    @media all and (min-width: ${theme.breakpoints.xl}) {
+      font-size: ${theme.sizes.size_18};
+    }
+  }
+
+  a, a:visited, a:hover {
+    text-decoration: none;
     cursor: pointer;
-    user-select: none;
-    outline: none;
   }
 
   img {
     user-select: none;
   }
-`
+`;

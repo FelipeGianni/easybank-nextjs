@@ -1,46 +1,41 @@
-{
-  "env": {
-    "browser": true,
-    "es6": true
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
   },
-  "extends": [
+  extends: [
     "next/core-web-vitals",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
+    "airbnb-typescript",
     "prettier",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
   ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
+  globals: {
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly",
   },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
-    "ecmaVersion": 2018,
-    "sourceType": "module",
-    "project": "./tsconfig.json"
+    ecmaVersion: 2018,
+    sourceType: "module",
+    project: "./tsconfig.json",
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
-  "rules": {
+  plugins: ["react", "@typescript-eslint", "prettier"],
+  rules: {
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "auto"
-      }
+        endOfLine: "auto",
+      },
     ],
-    "camelcase": "off",
+    camelcase: "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extension": [".tsx"]
-      }
-    ],
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": "off",
     "react/no-array-index-key": "off",
@@ -56,21 +51,13 @@
     "@typescript-eslint/no-unused-expressions": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
-    "semi": "off"
+    semi: "off",
   },
-  "settings": {
+  settings: {
     "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
-  }
-}
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
+      },
+    },
+  },
+};
