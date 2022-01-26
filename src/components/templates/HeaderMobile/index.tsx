@@ -1,44 +1,47 @@
-import { theme } from "styles/theme";
 import { useWindowSize } from "hooks";
-import React from "react";
+import Image from "next/image";
+import React, { useState } from "react";
+import { theme } from "styles/theme";
+import { Container, Logo, Menu, MenuItems, NavBar, Overlay } from "./styles";
 
 const HeaderMobile: React.FC = () => {
   const { width } = useWindowSize();
+  const [showMenu, setShowMenu] = useState<boolean>(false);
 
   return (
     <>
       {width < theme.breakpoints.xlNum && (
-        <header className="header">
-          <div className="overlay fade"></div>
+        <Container>
+          <NavBar>
+            <Logo href="#">
+              <Image
+                src="/assets/logo.svg"
+                alt="logo"
+                width="140px"
+                height="20px"
+              />
+            </Logo>
 
-          <nav className="container container--pall flex flex-jc-sb flex-ai-c">
-            <a href="/" className="header__logo">
-              <img src="./images/logo.svg" alt="Easybank" />
-            </a>
+            <Menu isMenuOpen={showMenu} onClick={() => setShowMenu(!showMenu)}>
+              <span />
+              <span />
+              <span />
+            </Menu>
+          </NavBar>
 
-            <a
-              href="#"
-              id="btnHamburguer"
-              className="header__toggle hide_for_desktop"
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </a>
-
-            <div className="header__links hide_for_mobile">
-              <a href="#">Home</a>
-              <a href="#">About</a>
-              <a href="#">Contact</a>
-              <a href="#">Blog</a>
-              <a href="#">Careers</a>
-            </div>
-
-            <a href="#" className="button hide_for_mobile">
-              Request Invite
-            </a>
-          </nav>
-        </header>
+          {showMenu && (
+            <>
+              <Overlay />
+              <MenuItems>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Blog</a>
+                <a href="#">Careers</a>
+              </MenuItems>
+            </>
+          )}
+        </Container>
       )}
     </>
   );
