@@ -24,6 +24,7 @@ export const SiteImage = styled.div`
     margin-bottom: 2.1875rem;
 
     @media all and (min-width: ${theme.breakpoints.xl}) {
+      overflow-x: hidden;
       background-image: url("./assets/bg-intro-desktop.svg");
       background-size: 172%;
       background-position: 10% 70%;

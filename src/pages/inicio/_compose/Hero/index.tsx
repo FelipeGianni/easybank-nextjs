@@ -5,7 +5,7 @@ import { Container, Content, SiteImage } from "./styles";
 const Hero: React.FC = () => {
   return (
     <Container>
-      <SiteImage className="hero__image" />
+      <SiteImage />
 
       <Content>
         <h1>Next generation digital banking</h1>
