@@ -111,7 +111,7 @@ export const Description = styled.p`
     color: ${theme.colors.grayishBlue};
 
     @media all and (min-width: ${theme.breakpoints.xl}) {
-      font-size: 0.675rem;
+      font-size: ${theme.sizes.size_10};
     }
   `}
 `;

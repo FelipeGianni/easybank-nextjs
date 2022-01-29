@@ -1,57 +1,86 @@
+import { ButtonRequestInvite } from "@/components";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import { firstLinks, icons, secondLinks } from "./content";
+import {
+  Clickable,
+  Column,
+  Container,
+  Copyright,
+  Final,
+  FirstLinks,
+  Icon,
+  Logo,
+  SecondLinks,
+  Social,
+} from "./styles";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer container container--px">
-      <div className="footer__first">
-        <div className="logo">
-          <a href="/" className="logo">
-            <img src="./images/logo-dark.svg" alt="Logo" />
-          </a>
-        </div>
+    <Container>
+      <Column>
+        <Social>
+          <Logo>
+            <Link href="#" passHref>
+              <Clickable>
+                <Image
+                  src="/assets/logo-dark.svg"
+                  alt="Logo"
+                  width={140}
+                  height={20}
+                />
+              </Clickable>
+            </Link>
+          </Logo>
 
-        <div className="icon">
-          <a href="#">
-            <img src="./images/icon-facebook.svg" alt="Facebook" />
-          </a>
+          <Icon>
+            {icons.map((icon) => (
+              <Link key={icon.src} href={icon.href} passHref>
+                <Clickable>
+                  <Image
+                    src={icon.src}
+                    alt={icon.alt}
+                    width={icon.width}
+                    height={icon.height}
+                  />
+                </Clickable>
+              </Link>
+            ))}
+          </Icon>
+        </Social>
 
-          <a href="#">
-            <img src="./images/icon-youtube.svg" alt="Youtube" />
-          </a>
+        <FirstLinks>
+          {firstLinks.map((firstLink, index) => (
+            <Link
+              key={`firstLink-${String(index)}`}
+              href={firstLink.href}
+              passHref
+            >
+              <Clickable>{firstLink.content}</Clickable>
+            </Link>
+          ))}
+        </FirstLinks>
 
-          <a href="#">
-            <img src="./images/icon-twitter.svg" alt="Twitter" />
-          </a>
+        <SecondLinks>
+          {secondLinks.map((secondLink, index) => (
+            <Link
+              key={`secondLink-${String(index)}`}
+              href={secondLink.href}
+              passHref
+            >
+              <Clickable>{secondLink.content}</Clickable>
+            </Link>
+          ))}
+        </SecondLinks>
+      </Column>
 
-          <a href="#">
-            <img src="./images/icon-pinterest.svg" alt="pinterest" />
-          </a>
+      <Final>
+        <ButtonRequestInvite />
 
-          <a href="#">
-            <img src="./images/icon-instagram.svg" alt="Instagram" />
-          </a>
-        </div>
-      </div>
-
-      <div className="footer__link1">
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-        <a href="#">Blog</a>
-      </div>
-
-      <div className="footer__link2">
-        <a href="#">Careers</a>
-        <a href="#">Support</a>
-        <a href="#">Privacy Policy</a>
-      </div>
-
-      <div className="footer__final">
-        <a href="#" className="button">
-          Request Invite
-        </a>
-        <p className="copyright">© Easybank. All Rights Reserved</p>
-      </div>
-    </footer>
+        <Copyright>© Easybank. All Rights Reserved</Copyright>
+      </Final>
+    </Container>
   );
 };
 

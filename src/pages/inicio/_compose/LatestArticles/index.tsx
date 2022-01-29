@@ -20,7 +20,7 @@ const LatestArticles: React.FC = () => {
 
       <Grid>
         {gridItems.map((item) => (
-          <GridItem href="#">
+          <GridItem key={item.image} href="#">
             <BackImage>
               <Image src={item.image} alt={item.alt} layout="fill" />
             </BackImage>

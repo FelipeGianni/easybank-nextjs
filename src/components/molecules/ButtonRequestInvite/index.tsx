@@ -1,7 +1,12 @@
 import { Button } from "./styles";
+import Link from "next/link";
 
 const ButtonRequestInvite: React.FC = () => {
-  return <Button href="#">Request Invite</Button>;
+  return (
+    <Link href="#" passHref>
+      <Button>Request Invite</Button>
+    </Link>
+  );
 };
 
 export default ButtonRequestInvite;
