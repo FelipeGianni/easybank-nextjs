@@ -20,16 +20,14 @@ export const SiteImage = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    min-height: 17.5rem;
-    margin-bottom: 2.1875rem;
+    height: 40vh;
 
     @media all and (min-width: ${theme.breakpoints.xl}) {
       overflow-x: hidden;
       background-image: url("./assets/bg-intro-desktop.svg");
       background-size: 172%;
       background-position: 10% 70%;
-      height: 41rem;
-      margin-bottom: 0;
+      height: calc(100vh - 4.75rem);
       flex: 8;
       order: 2;
     }
@@ -39,7 +37,7 @@ export const SiteImage = styled.div`
       position: absolute;
       height: 106%;
       width: 100%;
-      max-width: 32rem;
+      max-width: 50vh;
       right: 0;
       left: 0;
       margin: 0 auto;
@@ -49,14 +47,11 @@ export const SiteImage = styled.div`
       background-position: center bottom;
 
       @media all and (min-width: ${theme.breakpoints.xl}) {
-        top: 0;
-        right: 0;
-        left: 7rem;
         height: 100%;
-        width: 90%;
+        width: 100%;
         max-width: 43rem;
         background-size: 100%;
-        background-position: center bottom;
+        background-position: center;
       }
     }
   `}
@@ -66,6 +61,7 @@ export const Content = styled.div`
   ${({ theme }) => css`
     padding: 0 1.25rem;
     text-align: center;
+    margin-top: 2.25rem;
 
     h1 {
       margin-bottom: 1.25rem;
@@ -80,6 +76,7 @@ export const Content = styled.div`
       padding: 0;
       text-align: left;
       max-width: 28.5rem;
+      margin-top: 0;
     }
   `}
 `;

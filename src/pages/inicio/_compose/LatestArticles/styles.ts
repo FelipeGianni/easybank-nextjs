@@ -32,8 +32,12 @@ export const Grid = styled.div`
 
     @media all and (min-width: ${theme.breakpoints.xl}) {
       justify-content: space-evenly;
-      grid-template-columns: repeat(auto-fit, 256px);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.875rem;
+    }
+
+    @media all and (min-width: 1450px) {
+      grid-template-columns: repeat(4, 1fr);
     }
   `}
 `;
