@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'localhost:3000',
+  siteUrl: "https://easybank-nextjs-bertivello.vercel.app",
   generateRobotsTxt: true,
-  outDir: 'build',
-}
+  outDir: "build",
+};
