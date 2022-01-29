@@ -22,7 +22,11 @@ const HeaderMobile: React.FC = () => {
               />
             </Logo>
 
-            <Menu isMenuOpen={showMenu} onClick={() => setShowMenu(!showMenu)}>
+            <Menu
+              aria-label="menu button"
+              isMenuOpen={showMenu}
+              onClick={() => setShowMenu(!showMenu)}
+            >
               <span />
               <span />
               <span />

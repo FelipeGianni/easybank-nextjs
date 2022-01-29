@@ -13,13 +13,13 @@ export default function Home() {
         />
         <link
           rel="canonical"
-          href="https://www.frontendmentor.io?ref=challenge"
+          href="https://easybank-nextjs-bertivello.vercel.app"
         />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="pt-BR" />
         <meta
           property="og:url"
-          content="https://www.frontendmentor.io?ref=challenge"
+          content="https://easybank-nextjs-bertivello.vercel.app"
         />
         <meta property="og:title" content="Easybank" />
         <meta property="og:site_name" content="Easybank" />
